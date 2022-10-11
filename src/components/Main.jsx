@@ -24,7 +24,7 @@ const Main = () => {
 
   return (
     <div className="app">
-      <h1>i am main</h1>
+      <h1></h1>
       {/* Header needs no props */}
       <Header />
       {/* Palette needs to be passed activeColor and setActiveColor */}
