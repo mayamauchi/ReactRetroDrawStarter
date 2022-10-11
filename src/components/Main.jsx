@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { Header, Palette, Grid, ActionPanel } from "./";
 
 /**
@@ -13,6 +13,8 @@ import { COLORS, buildCellList } from "../utils";
  * with each other via state objects, and state functions.
  */
 const Main = () => {
+  const [activeColor, setActiveColor] = useState(COLORS[0]);
+  const [cellList, setCellList] = useState([]);
   /**
    * Using useState you need to create:
    *
@@ -26,11 +28,19 @@ const Main = () => {
       {/* Header needs no props */}
       <Header />
       {/* Palette needs to be passed activeColor and setActiveColor */}
-      <Palette />
+      <Palette 
+        activeColor={ activeColor }
+        setActiveColor={ setActiveColor }/>
       {/* Grid needs to be passed activeColor, cellList, and setCellList */}
-      <Grid />
+      <Grid 
+        activeColor={ activeColor }
+        cellList= { cellList }
+        setActiveColor={ setActiveColor }/>
       {/* ActionPanel needs to be passed activeColor, cellList, and setCellList */}
-      <ActionPanel />
+      <ActionPanel 
+        activeColor={ activeColor }
+        cellList= { cellList }
+        setActiveColor={ setActiveColor }/>
     </div>
   );
 };
