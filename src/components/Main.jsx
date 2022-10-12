@@ -14,7 +14,7 @@ import { COLORS, buildCellList } from "../utils";
  */
 const Main = () => {
   const [activeColor, setActiveColor] = useState(COLORS[0]);
-  const [cellList, setCellList] = useState([]);
+  const [cellList, setCellList] = useState(buildCellList());
   /**
    * Using useState you need to create:
    *
